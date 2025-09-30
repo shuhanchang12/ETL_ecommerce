@@ -57,7 +57,6 @@ def generate_orders(
         sold_at = start_dt + datetime.timedelta(seconds=rng.randint(0, delta_seconds))
         cid = rng.choice(customer_ids)
         unit_price = prices.get(pid, round(rng.uniform(5, 500), 2))
-        order_total = qty * unit_price
         rows.append(
             {
                 "id": i,
@@ -72,7 +71,7 @@ def generate_orders(
     df = pd.DataFrame(rows)
 
     # Ensure SOLD_AT is properly formatted as datetime
-    df["SOLD_AT"] = pd.to_datetime(df["SOLD_AT"])
+    df["sold_at"] = pd.to_datetime(df["sold_at"])
 
     print(f"✅ Generated {len(df)} orders as DataFrame")
     return df
