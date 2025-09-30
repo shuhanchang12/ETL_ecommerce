@@ -1,4 +1,4 @@
- -# Makefile for Snowflake Inventory Pipeline repo (using uv + ruff)
+# Makefile for Snowflake Inventory Pipeline repo (using uv + ruff)
 PYTHON ?= python3
 UV ?= uv
 
