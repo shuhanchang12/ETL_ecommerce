@@ -63,7 +63,7 @@ services:
       KAFKA_BOOTSTRAP_HOST: redpanda        # host part for producer script
       KAFKA_BOOTSTRAP_PORT: 9092            # port part for producer script
       KAFKA_TOPIC_NAME: ${KAFKA_TOPIC_NAME}
-    command: ["python", "-u", "src/producer.py"]
+    command: ["python", "-u", "src/producer_example.py"]
     volumes:
       - ./:/app
     depends_on:
