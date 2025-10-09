@@ -4,7 +4,7 @@ USE WAREHOUSE TEACH_WH;          -- choose the compute engine
 USE DATABASE RETAIL_LAB;         -- choose where data lives
 USE SCHEMA STG;                  -- choose sub-folder in database
 
-CREATE TABLE IF NOT EXISTS RETAIL_LAB.DWH.SALES (
+CREATE TABLE IF NOT EXISTS RETAIL_LAB.DWH.ORDER_STATUS_EVENT (
     ORDER_ID      NUMBER,
     CUSTOMER_ID   NUMBER,
     PRODUCT_ID    NUMBER,

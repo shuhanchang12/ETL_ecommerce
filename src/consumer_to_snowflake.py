@@ -99,7 +99,7 @@ def flush_batch(conn, buffer):
     Flush the current buffer to Snowflake and clear it.
     """
     raw_table = "ORDER_STATUS_EVENTS"
-    raw_database = os.getenv("SNOWFLAKE_DATABASE", "RETAIL_LAB")
+    raw_database = os.getenv("SNOWFLAKE_DATABASE")
     raw_schema = "RAW"
     if not buffer:
         return
@@ -114,7 +114,7 @@ def flush_batch(conn, buffer):
         overwrite=False,
     )
     print(f"Inserted {len(df)} rows into {raw_database}.{raw_schema}.{raw_table}")
-    merge_raw_into_dwh(conn)
+    # merge_raw_into_dwh(conn)
     print("Merged raw data into DWH")
     buffer.clear()  # clear the buffer after flushing
 
