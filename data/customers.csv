@@ -1,0 +1,101 @@
+customer_id,name,email,city,channel
+1,Allison Hill,donaldgarcia@example.net,New Roberttown,online
+2,David Guzman,jennifermiles@example.com,South Bridget,online
+3,Abigail Shaffer,jpeterson@example.org,Curtisfurt,online
+4,Ryan Munoz,blairamanda@example.com,New Kellystad,online
+5,Michele Williams,kendragalloway@example.org,South Joshuastad,store
+6,Henry Santiago,lynchgeorge@example.net,East Steven,store
+7,Timothy Watts,gabriellecameron@example.org,Port Antonio,store
+8,Derek Clark,jason76@example.net,Thomasberg,online
+9,Justin Baker,zhurst@example.com,East William,online
+10,Anthony Rodriguez,laurahenderson@example.org,Jamesmouth,online
+11,Tricia Valencia,frazierdanny@example.net,Kaylamouth,online
+12,Jeffrey Chavez,teresa28@example.org,Meaganhaven,online
+13,Brittany Farmer,georgetracy@example.org,Natashaport,online
+14,David Bradley,millertodd@example.org,East Donna,online
+15,Carmen Rose,ibrandt@example.net,Lake Larry,online
+16,Marie Kim DDS,wrightcaleb@example.org,New Jeffrey,online
+17,Mark Perez,heathchad@example.org,Elizabethborough,online
+18,Miranda Khan,esanchez@example.com,North Collin,online
+19,Jeff Owens,nuneztracey@example.org,South Jessicaville,store
+20,Connor West,dwhite@example.org,South Lindseyside,online
+21,Matthew Fernandez,novaksara@example.org,South Todd,store
+22,James Brown,ysmith@example.com,Mitchellside,store
+23,Katelyn Lee,tanyariley@example.net,Lake Leeton,online
+24,Kathryn Farrell,brianromero@example.org,New Carlosbury,online
+25,Todd Hudson,harveyrobert@example.net,Sarahborough,store
+26,Emily Baker,emilyevans@example.com,North Stephenshire,online
+27,Angel Lewis MD,nicole35@example.com,South Martha,online
+28,Lisa Archer,contrerasangela@example.net,East Josephville,online
+29,Brittney Campbell,jenniferharris@example.net,Williamview,store
+30,Sarah Davis,ccalderon@example.org,Kellieview,online
+31,Jeremy Thornton,rodriguezsierra@example.net,New Barry,store
+32,Juan Jordan,parkerrachel@example.org,Jasonbury,store
+33,Heather Castro,vdickson@example.org,Port Francisco,online
+34,Cassandra Gutierrez,jillcook@example.com,West Erik,store
+35,Janet Williams,dwalker@example.com,Loribury,online
+36,Matthew Ross,michelle45@example.net,Frazierside,online
+37,Alexander Wiley,gregory40@example.org,Reedmouth,store
+38,William Wilson,jonathanfletcher@example.org,West Ryan,online
+39,Tammie Hanson,cortezkevin@example.com,Nguyenport,store
+40,Cheryl Ortega,lbyrd@example.net,Richardtown,online
+41,Daniel Floyd,steven73@example.net,Leonburgh,store
+42,Diane Beck,clarence34@example.org,East Andrew,online
+43,John Atkinson,gibsonolivia@example.net,Lake Heather,online
+44,David Douglas Jr.,osbornejeffery@example.net,Williamsbury,online
+45,Barbara Anderson,jcontreras@example.net,Stephaniemouth,online
+46,Michelle Wagner,vmerritt@example.com,Greenbury,online
+47,Destiny Strickland,rsims@example.com,Lake Justinview,online
+48,Steven Miller,jessebenson@example.net,North Robert,online
+49,John Brown,xprice@example.net,Port Nicoleshire,online
+50,Aaron Bell,acastaneda@example.net,South Jeffrey,online
+51,Allen Rogers,dramsey@example.org,South Brittanytown,online
+52,Jeffrey Camacho,brentgray@example.org,Murphyfurt,online
+53,Trevor Fisher,ruizkaitlyn@example.org,Jeffreyland,online
+54,Marissa Webster,jamessmith@example.org,East Thomas,store
+55,Travis Marshall,katie29@example.net,Port Loriport,online
+56,Alexander Collins,tsanders@example.org,New Hannahbury,online
+57,Raymond Jefferson,hoganashlee@example.org,Amandastad,online
+58,Matthew Smith,gshort@example.com,Cynthiamouth,store
+59,Jessica Gross,christina87@example.com,Petersenshire,online
+60,Samuel Rivas,ramirezshannon@example.com,Rogersfort,online
+61,Catherine Lewis,matthew94@example.net,New Stacyland,store
+62,Jason Peters,hannahbrewer@example.com,Mcguireland,online
+63,Jared Sanchez,thomas85@example.com,Michaelmouth,online
+64,David Martinez,leslienewton@example.net,East Javier,store
+65,Dr. William Warren,tina34@example.org,Harrytown,store
+66,Beth Williams,tranheidi@example.org,Garciatown,store
+67,Julie Alexander,tammyking@example.com,Port Cameronfort,online
+68,Mark Brown,lisaavery@example.org,North Angela,online
+69,Kyle Montgomery,chayes@example.com,Torreston,online
+70,Natalie Meza,colleenbaker@example.org,East Glenn,online
+71,Aaron Hayes,ocarter@example.com,Jacquelinemouth,online
+72,David Baker,ronaldstephens@example.net,West Margaret,store
+73,Christopher Parker,scott74@example.net,Benderhaven,store
+74,Jessica George,mnavarro@example.com,North Jeremyshire,online
+75,Alicia Hubbard,barbara27@example.net,Moonburgh,store
+76,Jessica Olsen DVM,vbailey@example.com,Port Eugenechester,online
+77,Donna Landry,gibsonleonard@example.com,Port Richardhaven,store
+78,April Booth,mgutierrez@example.net,Cindyfort,online
+79,Olivia Harris,sarakim@example.net,Martinezbury,online
+80,Emily Smith,hdavis@example.com,Lake Marilynfort,online
+81,Dorothy Thornton,edavenport@example.org,Arnoldfurt,online
+82,Kyle Francis,michellehill@example.com,Sarahhaven,online
+83,Aaron Barber,cgrimes@example.net,Reedside,online
+84,Jamie Cantu,tinaallen@example.com,Port Kimberly,store
+85,Patrick Thornton,qhughes@example.net,South Tammie,online
+86,Vincent Rivera,sawyerscott@example.net,Smithberg,online
+87,Matthew Moore,qharrington@example.com,Santosmouth,store
+88,Shannon James,courtney78@example.org,East Crystalport,online
+89,Nicole Hamilton MD,wallaceheather@example.org,West Lauraport,online
+90,Jeffrey Sanchez,yknight@example.org,East Christian,online
+91,Lisa Allen,jesselittle@example.com,Elizabethmouth,online
+92,Megan Moore,llandry@example.com,Vaughnmouth,online
+93,Christina Cruz,yrodriguez@example.net,Baileyport,store
+94,Ronald Foster,knightgina@example.net,New Julieport,online
+95,Crystal Pham,danaoliver@example.net,Lake Colton,online
+96,Amanda Kramer,rileyjessica@example.org,Markchester,online
+97,Carlos Ryan,alyssa42@example.com,Coffeyport,store
+98,Gina Wilson,taylortammy@example.net,Coffeyside,online
+99,Richard Smith,gibsonemily@example.net,Brendastad,store
+100,David Johnson,rose31@example.net,Blankenshipport,store

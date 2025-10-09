@@ -188,3 +188,10 @@ if __name__ == "__main__":
     print(f"DataFrame columns: {list(orders_df.columns)}")
     print("\nFirst 5 rows:")
     print(orders_df.head())
+
+    # Sauvegarder customers_df dans customers.csv
+customers_df.to_csv("customers.csv", index=False)
+
+# Sauvegarder orders_df dans orders.csv
+orders_df.to_csv("orders.csv", index=False)
+
