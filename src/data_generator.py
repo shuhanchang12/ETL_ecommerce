@@ -78,11 +78,9 @@ def generate_orders(
 
 
 CATEGORIES = [
-    ("Apparel", ["T-Shirt", "Hoodie", "Jeans", "Sneakers", "Jacket"]),
-    ("Electronics", ["Headphones", "Smartphone", "Tablet", "Smartwatch", "Charger"]),
-    ("Home & Kitchen", ["Mug", "Kettle", "Blender", "Vacuum", "Toaster"]),
-    ("Beauty", ["Shampoo", "Conditioner", "Face Cream", "Perfume", "Lipstick"]),
-    ("Grocery", ["Coffee Beans", "Olive Oil", "Pasta", "Granola", "Tea"]),
+    ("Shampoo", ["High", "Medium", "low"]),
+    ("Soap", ["High", "Medium", "low", "Antipellicular"]),
+    ("Shaving", ["Male", "Female"]),
 ]
 
 ADJECTIVES = ["Classic", "Premium", "Eco", "Urban", "Sport", "Comfort", "Pro", "Lite", "Max", "Essential"]
