@@ -1,0 +1,101 @@
+product_id,product_name,category,unit_price,stock_quantity
+1000,Sport High,Beauty,25.11,112
+1001,Max Low,Beauty,30.59,112
+1002,Urban High,Beauty,25.92,160
+1003,Max High,Hair Care,15.22,111
+1004,Eco Male,Health,32.45,28
+1005,Comfort Medium,Personal Care,17.94,115
+1006,Essential Female,Health,34.76,97
+1007,Premium Low,Skincare,37.21,70
+1008,Essential Medium,Hair Care,23.56,42
+1009,Classic High,Personal Care,11.58,0
+1010,Premium High,Beauty,19.99,125
+1011,Comfort Male,Health,26.99,150
+1012,Eco Low,Beauty,20.42,70
+1013,Sport Medium,Skincare,40.7,74
+1014,Comfort High,Hair Care,24.76,0
+1015,Comfort High,Personal Care,13.87,92
+1016,Comfort Low,Hair Care,21.37,148
+1017,Sport High,Skincare,37.93,156
+1018,Essential Medium,Hair Care,14.04,114
+1019,Eco Male,Health,31.19,78
+1020,Eco High,Beauty,17.29,3
+1021,Premium Low,Skincare,22.44,133
+1022,Sport Low,Skincare,44.65,58
+1023,Premium Low,Beauty,21.77,12
+1024,Comfort Unisex,Health,42.14,121
+1025,Sport High,Skincare,42.51,62
+1026,Sport High,Hair Care,23.24,20
+1027,Comfort Medium,Personal Care,15.37,5
+1028,Essential High,Hair Care,19.55,90
+1029,Urban Female,Health,51.77,123
+1030,Lite High,Beauty,31.96,0
+1031,Eco High,Hair Care,13.49,0
+1032,Max Low,Personal Care,17.74,34
+1033,Sport Medium,Personal Care,10.49,133
+1034,Max Female,Health,28.7,93
+1035,Classic Medium,Beauty,21.16,57
+1036,Premium High,Personal Care,14.66,59
+1037,Comfort High,Beauty,29.16,99
+1038,Max High,Skincare,41.83,183
+1039,Lite Low,Hair Care,20.25,147
+1040,Premium High,Skincare,36.53,116
+1041,Lite Medium,Skincare,31.64,64
+1042,Pro High,Beauty,23.47,0
+1043,Urban High,Beauty,27.5,140
+1044,Sport High,Skincare,15.14,108
+1045,Max Medium,Beauty,32.42,130
+1046,Premium High,Hair Care,28.7,27
+1047,Lite Premium,Personal Care,7.55,94
+1048,Pro High,Beauty,31.22,80
+1049,Pro Medium,Skincare,26.0,0
+1050,Lite Low,Hair Care,22.36,121
+1051,Max Low,Beauty,30.03,99
+1052,Lite Low,Beauty,12.77,77
+1053,Max High,Personal Care,17.11,98
+1054,Urban High,Hair Care,10.2,161
+1055,Essential High,Hair Care,14.24,33
+1056,Essential Low,Skincare,24.0,59
+1057,Comfort Male,Health,35.62,140
+1058,Comfort Female,Health,53.5,19
+1059,Essential Medium,Beauty,45.0,78
+1060,Urban Low,Beauty,21.67,78
+1061,Urban Male,Health,31.5,105
+1062,Sport Low,Hair Care,8.72,0
+1063,Max High,Hair Care,17.75,164
+1064,Premium Low,Personal Care,19.75,16
+1065,Sport Low,Personal Care,10.28,21
+1066,Max Low,Personal Care,6.88,89
+1067,Pro High,Beauty,25.9,64
+1068,Sport Male,Health,39.98,135
+1069,Classic Low,Skincare,43.78,173
+1070,Comfort High,Personal Care,13.16,63
+1071,Sport High,Personal Care,9.25,184
+1072,Urban Medium,Beauty,21.16,0
+1073,Pro Unisex,Health,49.36,63
+1074,Eco Medium,Personal Care,15.62,70
+1075,Urban Female,Health,33.38,184
+1076,Classic Medium,Beauty,27.8,46
+1077,Sport Medium,Skincare,36.51,0
+1078,Urban High,Personal Care,12.57,108
+1079,Comfort Medium,Beauty,21.02,32
+1080,Classic Medium,Hair Care,29.93,185
+1081,Classic Low,Personal Care,18.11,120
+1082,Essential Female,Health,39.32,77
+1083,Sport High,Hair Care,25.14,97
+1084,Urban Low,Hair Care,18.75,97
+1085,Comfort Unisex,Health,32.66,53
+1086,Sport Unisex,Health,31.12,33
+1087,Eco Unisex,Health,39.62,162
+1088,Eco Low,Skincare,25.25,46
+1089,Sport High,Hair Care,18.78,141
+1090,Comfort Low,Hair Care,14.73,94
+1091,Eco Premium,Personal Care,13.34,38
+1092,Premium Medium,Hair Care,23.48,0
+1093,Urban Male,Health,36.62,94
+1094,Premium Low,Skincare,14.98,114
+1095,Pro High,Hair Care,16.26,81
+1096,Pro High,Beauty,27.2,186
+1097,Classic Medium,Hair Care,9.55,32
+1098,Eco Medium,Beauty,27.94,0
+1099,Comfort Low,Hair Care,30.02,40

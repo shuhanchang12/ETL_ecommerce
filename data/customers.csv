@@ -1,0 +1,101 @@
+customer_id,name,email,city,channel,created_at
+1,Allison Hill,donaldgarcia@example.net,New Roberttown,online,2023-12-27 16:40:17.897538+00:00
+2,Lance Hoffman,lrobinson@example.com,Port Lindachester,online,2024-06-24 19:09:37.447244+00:00
+3,Tyler Rogers,jamesmichael@example.com,Lindsaymouth,online,2024-11-14 22:56:42.635640+00:00
+4,Jamie Arnold,barbara10@example.net,Port Keith,online,2023-12-17 12:55:34.701394+00:00
+5,Brian Ramirez,francisco53@example.net,Jacquelineland,store,2025-01-07 05:02:38.670495+00:00
+6,Nicholas Martin,onelson@example.net,Lake Mark,store,2025-05-03 11:45:23.466596+00:00
+7,Rodney Trujillo,nadams@example.net,Jasonfort,store,2024-08-04 06:04:48.909899+00:00
+8,Judy Baker,julieryan@example.net,Hurstfurt,online,2024-07-10 16:23:58.414418+00:00
+9,Brenda Snyder PhD,hernandezernest@example.net,Carlsonfurt,online,2024-07-25 00:25:04.153590+00:00
+10,Kendra Maddox DVM,frazierdanny@example.net,Kaylamouth,online,2024-01-09 17:43:50.984782+00:00
+11,Jesse Mckay,teresa28@example.org,Meaganhaven,online,2025-01-07 02:13:30.388437+00:00
+12,Phillip Ryan,georgetracy@example.org,Natashaport,online,2024-04-12 04:00:52.683856+00:00
+13,Keith Miller,wcabrera@example.net,East Donna,online,2025-09-10 21:44:53.634798+00:00
+14,Joseph Obrien,sarahcampos@example.net,Lake Larry,online,2025-10-16 04:31:57.057435+00:00
+15,Jessica Holmes,wrightcaleb@example.org,New Jeffrey,online,2023-12-11 02:40:06.146025+00:00
+16,Crystal Whitehead,chad34@example.net,Lewisberg,online,2025-03-31 15:31:17.912857+00:00
+17,Laura Sanchez,maguirre@example.org,Lake Ryanchester,online,2024-08-15 13:17:57.988601+00:00
+18,Amy Valdez,brownjessica@example.org,East James,online,2024-09-11 22:55:44.589987+00:00
+19,Donald Wright,ramosmichelle@example.net,North Deniseside,store,2025-06-21 22:53:09.582171+00:00
+20,Tammy Allison,richardolson@example.com,East Nicholasfurt,online,2024-04-30 23:27:51.786263+00:00
+21,Jordan Henderson,smoore@example.org,New Jillton,store,2025-04-18 15:12:00.586668+00:00
+22,Kevin Shaw,brianromero@example.org,New Carlosbury,store,2024-08-10 04:51:02.952411+00:00
+23,Laura Riley,harveyrobert@example.net,Sarahborough,online,2025-02-20 11:21:57.556308+00:00
+24,Derek Anderson,stephen10@example.com,North Amandahaven,online,2024-04-30 23:25:04.950738+00:00
+25,Shirley Suarez,justin78@example.net,Cherylhaven,store,2023-10-25 23:12:09.454201+00:00
+26,Elizabeth Alvarado,josephpreston@example.net,West Juan,online,2024-03-22 02:42:34.821028+00:00
+27,Michael Farrell,dking@example.org,Calderonton,online,2023-10-22 20:12:46.748962+00:00
+28,Mandy Green,barnold@example.net,North Charlesberg,online,2024-11-21 19:04:43.441245+00:00
+29,Lauren Hernandez,bobbydiaz@example.org,Jasonbury,store,2025-02-18 10:24:29.138011+00:00
+30,Justin Baxter,sarayoung@example.org,South Angel,online,2025-04-10 07:08:47.164309+00:00
+31,Timothy Pham,josephcobb@example.org,Brennanfort,store,2024-03-30 17:39:10.204174+00:00
+32,Julia Torres,jeffreykeller@example.com,Joshualand,store,2025-09-25 13:05:14.395461+00:00
+33,Martin Ross,sheila14@example.org,Benjaminchester,online,2024-06-28 18:28:19.843764+00:00
+34,Jessica Joyce,cruzbarbara@example.com,Lake Ryanhaven,store,2025-08-26 08:47:28.291622+00:00
+35,Michelle Harmon,michaeljones@example.net,Cindyville,online,2025-03-29 00:26:16.525612+00:00
+36,Eric Ortiz,jterry@example.org,South Elizabeth,online,2024-07-23 05:02:40.831606+00:00
+37,Carrie Carroll,akelley@example.com,Jasonshire,store,2025-01-05 09:45:04.041950+00:00
+38,Jeremy Lowe,yleon@example.net,Lake Christopher,online,2024-10-30 18:42:31.995128+00:00
+39,Frances Cardenas,emilywalker@example.org,North Brandon,store,2025-10-07 23:56:44.623634+00:00
+40,Patricia Gibson,jennifercruz@example.com,East Diana,online,2023-10-24 07:15:38.724300+00:00
+41,Patricia Rodriguez,zrobinson@example.net,Williamsbury,store,2025-08-20 10:41:44.068173+00:00
+42,Casey Marshall,stephanie79@example.net,Rivasside,online,2024-09-09 23:35:42.270222+00:00
+43,Scott Cole,maryramirez@example.net,Simsview,online,2024-09-05 13:41:12.598592+00:00
+44,Cynthia Rogers,taylorjesse@example.net,Lake Jason,online,2024-08-18 07:18:59.331471+00:00
+45,John Brown,xprice@example.net,Port Nicoleshire,online,2024-07-24 02:42:33.418560+00:00
+46,Guy Molina,vmedina@example.net,South Jeffrey,online,2024-09-02 14:55:07.670812+00:00
+47,George Shelton,dramsey@example.org,South Brittanytown,online,2023-12-20 13:46:41.802633+00:00
+48,Sean White,nicholas37@example.com,Kathleenfurt,online,2024-05-10 12:18:47.119935+00:00
+49,Jennifer Conley,ismith@example.org,Jeffreyland,online,2025-05-12 22:15:16.202092+00:00
+50,Nicole Herring,maryhowell@example.org,South Elizabeth,online,2024-12-05 05:17:44.417992+00:00
+51,Michael Wang,catherinestuart@example.net,Port Loriport,online,2024-01-07 05:11:13.409750+00:00
+52,Eric Byrd,tsanders@example.org,New Hannahbury,online,2024-01-02 16:32:11.188028+00:00
+53,Sarah Burke,hoganashlee@example.org,Amandastad,online,2023-12-09 14:58:05.059544+00:00
+54,Alexandria Fisher,xgarcia@example.net,Zimmermanchester,store,2024-02-25 22:00:01.161670+00:00
+55,Marie Gilbert,umarshall@example.net,Marcusbury,online,2025-06-18 02:01:44.900284+00:00
+56,Stephen Sanchez,qhudson@example.com,Anthonymouth,online,2024-03-01 01:58:50.733206+00:00
+57,Robert Peterson,angela83@example.org,Lake Richard,online,2024-11-28 19:08:04.284738+00:00
+58,John Joseph,fmcguire@example.com,South Heather,store,2024-05-30 22:18:31.708847+00:00
+59,Kara Schmidt,jbarajas@example.com,Jacquelineview,online,2024-05-31 05:37:07.579051+00:00
+60,Nathan Stewart,jamesrodgers@example.com,Tinaborough,online,2024-05-23 15:42:08.864384+00:00
+61,Eric Erickson,joshuamccann@example.net,Heidiberg,store,2025-01-28 04:52:34.617178+00:00
+62,Ashley Smith,taylor75@example.org,West Shelleyfort,online,2024-01-11 14:10:21.561702+00:00
+63,John Ray,hernandezlisa@example.com,East Davidchester,online,2025-01-05 03:43:18.104829+00:00
+64,Courtney Mills,tkerr@example.net,Torreston,store,2025-01-07 13:48:29.510318+00:00
+65,Theresa Clark,josephmiller@example.org,New Charles,store,2023-10-22 04:57:40.143577+00:00
+66,Kirk Carter,keithcampbell@example.com,Lake Jesusview,store,2025-05-17 17:52:28.100584+00:00
+67,Mary Peck,owilson@example.net,West Margaret,online,2023-12-11 09:58:28.738924+00:00
+68,Eric Curry,scott74@example.net,Benderhaven,online,2024-11-17 16:44:57.231546+00:00
+69,Kyle Preston,cassandra01@example.org,Port Emilyview,online,2024-12-14 04:32:13.927810+00:00
+70,Casey Stone,lmoon@example.net,Waltersfort,online,2025-09-27 03:03:46.507886+00:00
+71,Jason Morris,hodgemark@example.net,Robertsfurt,online,2025-06-05 13:06:03.153586+00:00
+72,Jordan Edwards,darrell68@example.org,Gutierrezborough,store,2024-11-01 23:04:56.079767+00:00
+73,Kathleen Ramos,harrisandrea@example.com,Gilmorefort,store,2024-01-16 22:50:07.712376+00:00
+74,Lisa Allen,lancesmith@example.com,East Victoriaville,online,2024-09-21 07:56:04.748712+00:00
+75,Ronnie Jimenez,william46@example.com,Sanchezside,store,2024-02-02 21:50:42.828041+00:00
+76,Kyle Francis,michellehill@example.com,Sarahhaven,online,2024-05-02 09:59:40.389638+00:00
+77,Nicholas Monroe,cgrimes@example.net,Reedside,store,2025-04-29 12:22:09.378534+00:00
+78,Timothy Kane,ashleyhall@example.com,West Juliefurt,online,2024-07-28 06:35:56.535135+00:00
+79,Samantha Pollard,ihanna@example.net,Mollymouth,online,2024-01-01 02:08:57.443511+00:00
+80,Alexis Thomas,charlesharrington@example.com,Cindyfurt,online,2025-02-05 22:40:33.377136+00:00
+81,Sarah Villarreal,ofinley@example.net,Brennanton,online,2025-01-13 07:03:16.440999+00:00
+82,Michael Mitchell,juliehamilton@example.org,South Garrettport,online,2025-08-10 04:26:55.244350+00:00
+83,Robert Carter,ryan38@example.com,East Gregory,online,2025-01-07 11:22:08.826020+00:00
+84,Michael Jimenez,jesselittle@example.com,Elizabethmouth,store,2025-08-08 13:37:21.722444+00:00
+85,Brooke Alexander,vanessa46@example.net,Stephenport,online,2024-03-13 18:37:42.495183+00:00
+86,John Young,bailey40@example.net,Hillshire,online,2025-07-13 03:59:52.982679+00:00
+87,Valerie Lozano,swall@example.org,Jefferyborough,store,2025-01-15 19:13:03.039272+00:00
+88,Michelle Hopkins,courtneyberger@example.net,West Kristinaton,online,2024-12-16 14:51:41.137052+00:00
+89,Ann Phillips,ithompson@example.net,Alyssaview,online,2025-06-17 21:29:56.421834+00:00
+90,Roger Olson,julie51@example.com,East Karenbury,online,2025-07-09 13:37:25.478437+00:00
+91,Veronica Coffey,christopher60@example.com,South Miguelview,online,2024-12-20 06:16:42.976806+00:00
+92,Teresa Rodriguez,thomasharvey@example.net,Rosebury,online,2025-02-04 08:22:56.391221+00:00
+93,Julie Haynes,cwilson@example.org,Wendyville,store,2023-12-30 05:58:30.483642+00:00
+94,Brandy Chavez,umatthews@example.org,Penafort,online,2025-01-11 23:22:14.773256+00:00
+95,Diana Vaughn,scottsampson@example.com,Lake Michaelstad,online,2023-12-03 11:35:12.357214+00:00
+96,Walter Rush,ndavis@example.net,North Kristinbury,online,2025-10-11 13:35:06.433922+00:00
+97,Christine Gallegos,brendali@example.org,Kimtown,store,2024-05-09 19:06:04.227791+00:00
+98,Dr. Kimberly Lindsey,guerreroanthony@example.org,Kristybury,online,2024-12-23 09:32:18.407949+00:00
+99,Derek Martinez,vfox@example.org,Weststad,store,2024-10-29 03:53:35.466905+00:00
+100,Jonathan Dougherty,acostaregina@example.net,Stephentown,store,2023-12-03 16:24:48.652793+00:00
