@@ -114,6 +114,7 @@ def flush_batch(conn, buffer):
         overwrite=False,
     )
     print(f"Inserted {len(df)} rows into {raw_database}.{raw_schema}.{raw_table}")
+    
     # merge_raw_into_dwh(conn)
     print("Merged raw data into DWH")
     buffer.clear()  # clear the buffer after flushing
