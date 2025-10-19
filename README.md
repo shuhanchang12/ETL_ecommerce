@@ -1,7 +1,20 @@
-
 # ETL-Warehousing Project
 
+## Slide:
+
+
+<div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https://www.canva.com/design/DAG2JrqxqKk/DMyxatgzu46sJ2j63Q2h7w/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https://www.canva.com/design/DAG2JrqxqKk/DMyxatgzu46sJ2j63Q2h7w/view?utm_content=DAG2JrqxqKk&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Presentation - Cloud Data Pipeline</a> by Shuhan Chang
+
+
 ## Project Overview
+
 This project demonstrates a complete ETL pipeline: data generation, event streaming, data warehousing, and monitoring analytics. Suitable for teaching or prototyping.
 
 ## Directory Structure
@@ -63,15 +76,16 @@ This project demonstrates a complete ETL pipeline: data generation, event stream
 
 ## Completion Checklist
 
-- [x] venv created and packages installed
-- [x] .env configured
-- [x] Kafka/Redpanda running
-- [x] Data CSVs generated
-- [x] Snowflake RAW table created
-- [x] Consumer script running
-- [x] Producer script running
-- [x] Data visible in Snowflake
-- [x] Streamlit monitoring dashboard working
+- [X] venv created and packages installed
+- [X] .env configured
+- [X] Kafka/Redpanda running
+- [X] Data CSVs generated
+- [X] Snowflake RAW table created
+- [X] Consumer script running
+- [X] Producer script running
+- [X] Data visible in Snowflake
+- [X] Streamlit monitoring dashboard working
 
 ---
+
 For more details, SQL examples, or automation scripts, see `PROJECT_SUMMARY.md` or the notebook documentation.
