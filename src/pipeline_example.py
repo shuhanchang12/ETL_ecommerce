@@ -121,6 +121,8 @@ def main():
     staging_table = "ORDERS_STG"  # TODO: Rename to match your naming standards
     target_table = "ORDERS_ANALYTICS"  # TODO: Create or point to your final table
 
+    
+    
     try:
         # --- STEP 1: CONNECT -------------------------------------------------
         print("🔌 Connecting to Snowflake ...")
