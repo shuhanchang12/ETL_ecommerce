@@ -5,7 +5,7 @@
 
 An end-to-end, classroom-friendly data project:
 
-- Interactive, single-page dashboard explaining the pipeline, schemas, star model, and KPIs (page.html with Tailwind + Chart.js)
+- Interactive, single-page dashboard explaining the pipeline, schemas, star model, and KPIs
 - Optional hands-on ETL demo with Python, Kafka (local via Docker), and Snowflake RAW loading
 
 Use this to learn, demo, or prototype modern data workflows.
