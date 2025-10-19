@@ -1,5 +1,5 @@
-"""producer_example.py
-Step 2: Create event messages and send to Kafka
+"""simple_producer.py
+Simple Kafka producer using confluent-kafka
 """
 
 import json
@@ -10,23 +10,20 @@ import uuid
 from datetime import datetime, timezone
 
 import pandas as pd
-from kafka import KafkaProducer
+from confluent_kafka import Producer
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# Environment variables
-BOOTSTRAP_HOST = os.getenv("KAFKA_BOOTSTRAP_HOST", "localhost")
-BOOTSTRAP_PORT = os.getenv("KAFKA_BOOTSTRAP_PORT", "19092")
+# Configuration
+BOOTSTRAP_SERVER = os.getenv("KAFKA_BOOTSTRAP", "localhost:19092")
 TOPIC_NAME = os.getenv("KAFKA_TOPIC_NAME", "order_status_event")
-BOOTSTRAP_SERVER = f"{BOOTSTRAP_HOST}:{BOOTSTRAP_PORT}"
 
-# Initialize producer
-print(f"Connecting to Kafka at {BOOTSTRAP_SERVER}")
-producer = KafkaProducer(
-    bootstrap_servers=BOOTSTRAP_SERVER, 
-    value_serializer=lambda v: json.dumps(v).encode("utf-8")
-)
+# Create producer
+producer = Producer({
+    'bootstrap.servers': BOOTSTRAP_SERVER,
+    'client.id': 'python-producer'
+})
 
 statuses = [
     ("CREATED", 0.3),
@@ -41,8 +38,6 @@ statuses = [
 rng = random.Random(42)
 
 
-# Create events based on existing orders
-# Each order can have multiple events (status updates)
 def create_order_status_event(order_id, customer_id, status, timestamp=None):
     """Create an order status event."""
     if timestamp is None:
@@ -56,6 +51,14 @@ def create_order_status_event(order_id, customer_id, status, timestamp=None):
         "status_ts": timestamp,
         "source": "order_service",
     }
+
+
+def delivery_report(err, msg):
+    """Callback for message delivery."""
+    if err is not None:
+        print(f'Message delivery failed: {err}')
+    else:
+        print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
 
 
 def stream_order_events(df, delay=0.5):
@@ -73,7 +76,12 @@ def stream_order_events(df, delay=0.5):
         
         for status in status_sequence[:max_idx]:
             evt = create_order_status_event(order_id, customer_id, status)
-            producer.send(TOPIC_NAME, value=evt)
+            producer.produce(
+                TOPIC_NAME,
+                key=str(order_id),
+                value=json.dumps(evt).encode('utf-8'),
+                callback=delivery_report
+            )
             print(f"→ Order {order_id}: {status}")
             time.sleep(delay)
 
@@ -81,7 +89,12 @@ def stream_order_events(df, delay=0.5):
         if random.random() < 0.15:
             terminal_status = random.choice([s for s in ("CANCELLED", "REFUNDED", "RETURNED")])
             evt = create_order_status_event(order_id, customer_id, terminal_status)
-            producer.send(TOPIC_NAME, value=evt)
+            producer.produce(
+                TOPIC_NAME,
+                key=str(order_id),
+                value=json.dumps(evt).encode('utf-8'),
+                callback=delivery_report
+            )
             print(f"→ Order {order_id}: {terminal_status}")
             time.sleep(delay)
     

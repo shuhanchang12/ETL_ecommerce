@@ -1,0 +1,184 @@
+-- =====================================================
+-- FINAL PROJECT - SNOWFLAKE SETUP SCRIPT
+-- Run this in your Snowflake account manually
+-- =====================================================
+
+-- Step 1: Create Warehouse
+CREATE WAREHOUSE IF NOT EXISTS etl_wh
+  WITH WAREHOUSE_SIZE = 'XSMALL'
+  AUTO_SUSPEND = 60
+  AUTO_RESUME = TRUE;
+
+-- Step 2: Create Database
+CREATE DATABASE IF NOT EXISTS etl_db;
+
+-- Step 3: Create Schemas (as required by Final Project)
+CREATE SCHEMA IF NOT EXISTS etl_db.raw;
+CREATE SCHEMA IF NOT EXISTS etl_db.staging;
+CREATE SCHEMA IF NOT EXISTS etl_db.prod;
+
+-- Step 4: Use the database and schema
+USE WAREHOUSE etl_wh;
+USE DATABASE etl_db;
+USE SCHEMA raw;
+
+-- Step 5: Create Raw Data Tables
+CREATE TABLE IF NOT EXISTS etl_db.raw.CUSTOMERS (
+    CUSTOMER_ID NUMBER,
+    NAME STRING,
+    EMAIL STRING,
+    CITY STRING,
+    CHANNEL STRING,
+    CREATED_AT TIMESTAMP_NTZ,
+    _INGESTED_AT TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+CREATE TABLE IF NOT EXISTS etl_db.raw.PRODUCTS (
+    PRODUCT_ID NUMBER,
+    PRODUCT_NAME STRING,
+    CATEGORY STRING,
+    UNIT_PRICE NUMBER(10,2),
+    STOCK_QUANTITY NUMBER,
+    _INGESTED_AT TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+CREATE TABLE IF NOT EXISTS etl_db.raw.ORDERS (
+    ORDER_ID NUMBER,
+    CUSTOMER_ID NUMBER,
+    PRODUCT_ID NUMBER,
+    QUANTITY NUMBER,
+    UNIT_PRICE NUMBER(10,2),
+    ORDER_TOTAL NUMBER(12,2),
+    SOLD_AT TIMESTAMP_NTZ,
+    _INGESTED_AT TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+-- Step 6: Create Event Table (Step 2)
+CREATE TABLE IF NOT EXISTS etl_db.raw.ORDER_STATUS_EVENTS (
+    EVENT_ID STRING,
+    ORDER_ID NUMBER,
+    CUSTOMER_ID NUMBER,
+    NEW_STATUS STRING,
+    STATUS_TS TIMESTAMP_NTZ,
+    SOURCE STRING,
+    _INGESTED_AT TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+-- Step 7: Create DWH Tables (Step 3)
+CREATE TABLE IF NOT EXISTS etl_db.staging.ORDER_STATUS_PROCESSED (
+    ORDER_ID NUMBER,
+    CUSTOMER_ID NUMBER,
+    CURRENT_STATUS STRING,
+    PREVIOUS_STATUS STRING,
+    LAST_UPDATE_TS TIMESTAMP_NTZ,
+    CREATED_AT TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP()
+);
+
+-- Step 8: Create Analytics Tables (Step 4)
+CREATE TABLE IF NOT EXISTS etl_db.prod.DAILY_ORDER_ANALYTICS AS
+SELECT 
+    DATE(CURRENT_TIMESTAMP()) as ORDER_DATE,
+    'DEMO' as CURRENT_STATUS,
+    0 as ORDER_COUNT,
+    0 as UNIQUE_CUSTOMERS
+WHERE FALSE;
+
+CREATE TABLE IF NOT EXISTS etl_db.prod.CUSTOMER_ANALYTICS AS
+SELECT 
+    0 as CUSTOMER_ID,
+    0 as TOTAL_ORDERS,
+    0 as STATUS_TYPES,
+    CURRENT_TIMESTAMP() as FIRST_ORDER_DATE,
+    CURRENT_TIMESTAMP() as LAST_ORDER_DATE,
+    0 as HAS_DELIVERED_ORDERS
+WHERE FALSE;
+
+-- Step 9: Create Stream (Step 3 - Automation)
+CREATE OR REPLACE STREAM etl_db.raw.ORDER_STATUS_EVENTS_STREAM 
+ON TABLE etl_db.raw.ORDER_STATUS_EVENTS;
+
+-- Step 10: Create Task (Step 3 - Automation)
+CREATE OR REPLACE TASK etl_db.raw.PROCESS_ORDER_EVENTS
+    WAREHOUSE = etl_wh
+    SCHEDULE = '1 minute'
+    WHEN SYSTEM$STREAM_HAS_DATA('etl_db.raw.ORDER_STATUS_EVENTS_STREAM')
+AS
+    MERGE INTO etl_db.staging.ORDER_STATUS_PROCESSED AS T
+    USING (
+        SELECT 
+            ORDER_ID,
+            CUSTOMER_ID,
+            NEW_STATUS,
+            STATUS_TS,
+            ROW_NUMBER() OVER (
+                PARTITION BY ORDER_ID 
+                ORDER BY STATUS_TS DESC
+            ) AS RN
+        FROM etl_db.raw.ORDER_STATUS_EVENTS_STREAM
+    ) AS S
+    ON T.ORDER_ID = S.ORDER_ID
+    WHEN MATCHED AND S.RN = 1 THEN
+        UPDATE SET
+            T.PREVIOUS_STATUS = T.CURRENT_STATUS,
+            T.CURRENT_STATUS = S.NEW_STATUS,
+            T.LAST_UPDATE_TS = S.STATUS_TS
+    WHEN NOT MATCHED AND S.RN = 1 THEN
+        INSERT (ORDER_ID, CUSTOMER_ID, CURRENT_STATUS, LAST_UPDATE_TS)
+        VALUES (S.ORDER_ID, S.CUSTOMER_ID, S.NEW_STATUS, S.STATUS_TS);
+
+-- Step 11: Resume the task
+ALTER TASK etl_db.raw.PROCESS_ORDER_EVENTS RESUME;
+
+-- Step 12: Create Monitoring View (Step 4)
+CREATE OR REPLACE VIEW etl_db.prod.ORDER_MONITORING AS
+SELECT 
+    CURRENT_STATUS,
+    COUNT(*) as ORDER_COUNT,
+    COUNT(DISTINCT CUSTOMER_ID) as UNIQUE_CUSTOMERS,
+    MIN(LAST_UPDATE_TS) as EARLIEST_UPDATE,
+    MAX(LAST_UPDATE_TS) as LATEST_UPDATE
+FROM etl_db.staging.ORDER_STATUS_PROCESSED
+GROUP BY CURRENT_STATUS
+ORDER BY ORDER_COUNT DESC;
+
+-- Step 13: Insert Sample Data for Demonstration
+INSERT INTO etl_db.raw.CUSTOMERS VALUES 
+(1, 'John Doe', 'john@example.com', 'New York', 'online', CURRENT_TIMESTAMP()),
+(2, 'Jane Smith', 'jane@example.com', 'Los Angeles', 'store', CURRENT_TIMESTAMP()),
+(3, 'Bob Johnson', 'bob@example.com', 'Chicago', 'online', CURRENT_TIMESTAMP());
+
+INSERT INTO etl_db.raw.PRODUCTS VALUES 
+(1001, 'Premium Shampoo', 'Beauty', 25.99, 100),
+(1002, 'Classic Soap', 'Personal Care', 15.50, 150),
+(1003, 'Sport Conditioner', 'Hair Care', 30.00, 75);
+
+INSERT INTO etl_db.raw.ORDERS VALUES 
+(1, 1, 1001, 2, 25.99, 51.98, CURRENT_TIMESTAMP()),
+(2, 2, 1002, 1, 15.50, 15.50, CURRENT_TIMESTAMP()),
+(3, 3, 1003, 3, 30.00, 90.00, CURRENT_TIMESTAMP());
+
+INSERT INTO etl_db.raw.ORDER_STATUS_EVENTS VALUES 
+('evt_001', 1, 1, 'CREATED', CURRENT_TIMESTAMP(), 'order_service'),
+('evt_002', 1, 1, 'PAID', CURRENT_TIMESTAMP(), 'order_service'),
+('evt_003', 1, 1, 'SHIPPED', CURRENT_TIMESTAMP(), 'order_service'),
+('evt_004', 2, 2, 'CREATED', CURRENT_TIMESTAMP(), 'order_service'),
+('evt_005', 2, 2, 'PAID', CURRENT_TIMESTAMP(), 'order_service'),
+('evt_006', 3, 3, 'CREATED', CURRENT_TIMESTAMP(), 'order_service'),
+('evt_007', 3, 3, 'PAID', CURRENT_TIMESTAMP(), 'order_service'),
+('evt_008', 3, 3, 'DELIVERED', CURRENT_TIMESTAMP(), 'order_service');
+
+-- Step 14: Verify Data
+SELECT 'CUSTOMERS' as TABLE_NAME, COUNT(*) as RECORD_COUNT FROM etl_db.raw.CUSTOMERS
+UNION ALL
+SELECT 'PRODUCTS' as TABLE_NAME, COUNT(*) as RECORD_COUNT FROM etl_db.raw.PRODUCTS
+UNION ALL
+SELECT 'ORDERS' as TABLE_NAME, COUNT(*) as RECORD_COUNT FROM etl_db.raw.ORDERS
+UNION ALL
+SELECT 'ORDER_STATUS_EVENTS' as TABLE_NAME, COUNT(*) as RECORD_COUNT FROM etl_db.raw.ORDER_STATUS_EVENTS;
+
+-- Step 15: Show Monitoring Data
+SELECT * FROM etl_db.prod.ORDER_MONITORING;
+
+-- =====================================================
+-- FINAL PROJECT SETUP COMPLETE!
+-- =====================================================

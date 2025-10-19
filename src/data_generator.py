@@ -1,5 +1,6 @@
 import datetime
 import random
+import os
 
 import pandas as pd
 from faker import Faker
@@ -57,13 +58,15 @@ def generate_orders(
         sold_at = start_dt + datetime.timedelta(seconds=rng.randint(0, delta_seconds))
         cid = rng.choice(customer_ids)
         unit_price = prices.get(pid, round(rng.uniform(5, 500), 2))
+        order_total = qty * unit_price
         rows.append(
             {
-                "id": i,
+                "order_id": i,
                 "product_id": pid,
                 "customer_id": cid,
                 "quantity": qty,
                 "unit_price": unit_price,
+                "order_total": order_total,
                 "sold_at": sold_at,
             }
         )
@@ -78,9 +81,11 @@ def generate_orders(
 
 
 CATEGORIES = [
-    ("Shampoo", ["High", "Medium", "low"]),
-    ("Soap", ["High", "Medium", "low", "Antipellicular"]),
-    ("Shaving", ["Male", "Female"]),
+    ("Beauty", ["High", "Medium", "Low"]),
+    ("Personal Care", ["High", "Medium", "Low", "Premium"]),
+    ("Health", ["Male", "Female", "Unisex"]),
+    ("Skincare", ["High", "Medium", "Low"]),
+    ("Hair Care", ["High", "Medium", "Low"]),
 ]
 
 ADJECTIVES = ["Classic", "Premium", "Eco", "Urban", "Sport", "Comfort", "Pro", "Lite", "Max", "Essential"]
@@ -107,7 +112,7 @@ def generate_inventory_data(products: int, seed: int = 42) -> pd.DataFrame:
         adj = rng.choice(ADJECTIVES)
         product_name = f"{adj} {base}"
         # Base price by category with some variance
-        base_price = {"Apparel": 39, "Electronics": 299, "Home & Kitchen": 79, "Beauty": 25, "Grocery": 12}[cat]
+        base_price = {"Beauty": 25, "Personal Care": 15, "Health": 35, "Skincare": 30, "Hair Care": 20}.get(cat, 20)
         price = round(gaussian_clamped(rng, base_price, base_price * 0.25, base_price * 0.4, base_price * 1.8), 2)
         # Stock skewed: long tail
         stock_qty = int(gaussian_clamped(rng, 80, 60, 0, 400))
@@ -152,6 +157,7 @@ def generate_customers(customers: int, seed: int = 42) -> pd.DataFrame:
         email = fake.email()
         city = fake.city()
         channel = rng.choices([c for c, _ in channels], weights=[w for _, w in channels])[0]
+        created_at = fake.date_time_between(start_date='-2y', end_date='now', tzinfo=datetime.timezone.utc)
         rows.append(
             {
                 "customer_id": cid,
@@ -159,6 +165,7 @@ def generate_customers(customers: int, seed: int = 42) -> pd.DataFrame:
                 "email": email,
                 "city": city,
                 "channel": channel,
+                "created_at": created_at,
             }
         )
 
@@ -168,28 +175,18 @@ def generate_customers(customers: int, seed: int = 42) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    # Example usage
+    # Create data directory if it doesn't exist
+    os.makedirs("data", exist_ok=True)
+    
+    # Generate data
     customers_df = generate_customers(customers=100, seed=42)
-    print(f"DataFrame shape: {customers_df.shape}")
-    print(f"DataFrame columns: {list(customers_df.columns)}")
-    print("\nFirst 5 rows:")
-    print(customers_df.head())
-
     inventory_df = generate_inventory_data(products=100, seed=42)
-    print(f"DataFrame shape: {inventory_df.shape}")
-    print(f"DataFrame columns: {list(inventory_df.columns)}")
-    print("\nFirst 5 rows:")
-    print(inventory_df.head())
-
     orders_df = generate_orders(orders=100, seed=42, inventory=inventory_df, customers=customers_df)
-    print(f"DataFrame shape: {orders_df.shape}")
-    print(f"DataFrame columns: {list(orders_df.columns)}")
-    print("\nFirst 5 rows:")
-    print(orders_df.head())
-
-    # Sauvegarder customers_df dans customers.csv
-customers_df.to_csv("customers.csv", index=False)
-
-# Sauvegarder orders_df dans orders.csv
-orders_df.to_csv("orders.csv", index=False)
+    
+    # Save to CSV files
+    customers_df.to_csv("data/customers.csv", index=False)
+    inventory_df.to_csv("data/products.csv", index=False)
+    orders_df.to_csv("data/orders.csv", index=False)
+    
+    print("✅ All data files generated successfully!")
 
