@@ -12,7 +12,6 @@ Use this to learn, demo, or prototype modern data workflows.
 
 ## Tech stack
 
-- Frontend: HTML, Tailwind (CDN), Chart.js (CDN), vanilla JS
 - Data/ETL (optional): Python 3, Kafka, Snowflake, Docker Desktop (for local Kafka)
 
 ## Repository layout
