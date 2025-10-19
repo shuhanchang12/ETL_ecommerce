@@ -70,6 +70,21 @@ services:
       - redpanda
     networks:
       - redpanda-net
+    
+  order:
+    image: kafka-lab:latest
+    container_name: order
+    environment:
+      KAFKA_BOOTSTRAP_HOST: redpanda        # host part for producer script
+      KAFKA_BOOTSTRAP_PORT: 9092            # port part for producer script
+      KAFKA_TOPIC_NAME: ${KAFKA_TOPIC_NAME}
+    command: ["python", "-u", "src/data_generator.py"]
+    volumes:
+      - ./:/app
+    depends_on:
+      - redpanda
+    networks:
+      - redpanda-net
 
 
   # Consumer service
